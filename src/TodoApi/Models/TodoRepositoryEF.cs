@@ -12,7 +12,6 @@ namespace TodoApi.Models
         public TodoRepositoryEF(TodoMySqlContext todoContext)
         {
             _todoContext = todoContext;
-            _todoContext.Database.Initialize();
         }
 
         public IEnumerable<TodoItem> GetAll()
