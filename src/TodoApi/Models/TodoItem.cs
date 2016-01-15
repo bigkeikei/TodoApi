@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoApi.Models
 {
@@ -8,5 +9,6 @@ namespace TodoApi.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public bool IsComplete { get; set; }
+        public DateTime? TargetDate { get; set; }
     }
 }

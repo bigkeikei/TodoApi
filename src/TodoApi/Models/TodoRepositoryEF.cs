@@ -45,6 +45,7 @@ namespace TodoApi.Models
             TodoItem itemToUpdate = _todoContext.TodoItems.Find(item.Id);
             itemToUpdate.Name = item.Name;
             itemToUpdate.IsComplete = item.IsComplete;
+            itemToUpdate.TargetDate = item.TargetDate;
             _todoContext.SaveChanges();
             return;
         }
