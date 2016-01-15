@@ -37,8 +37,8 @@ namespace TodoApi
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
-            services.AddScoped((_) => new Models.MySql.TodoMySqlContext(Configuration["Data:ConnectionString"]));
-            services.AddSingleton<ITodoRepository, TodoRepositoryEF>();
+            services.AddScoped((_) => (TodoContext)new TodoMySqlContext(Configuration["Data:ConnectionString"]));
+            services.AddScoped<ITodoRepository, TodoRepositoryEF>();
             
         }
 
