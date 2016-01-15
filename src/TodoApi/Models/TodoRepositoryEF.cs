@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using TodoApi.Models.MySql;
-using System.Data.Entity;
 
 namespace TodoApi.Models
 {
     public class TodoRepositoryEF : ITodoRepository
     {
-        public TodoMySqlContext _todoContext { get; set; }
+        public TodoContext _todoContext { get; set; }
 
-        public TodoRepositoryEF(TodoMySqlContext todoContext)
+        public TodoRepositoryEF(TodoContext context)
         {
-            _todoContext = todoContext;
+            _todoContext = context;
         }
 
         public IEnumerable<TodoItem> GetAll()
